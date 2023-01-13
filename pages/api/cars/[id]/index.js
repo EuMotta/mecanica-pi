@@ -1,7 +1,7 @@
 import Cars from '../../../../models/Cars';
 import db from '../../../../utils/db';
 
-const postHandler = async (req, res) => {
+const handler = async (req, res) => {
   await db.connect();
   const newCar = new Cars({
     Ownername: req.body.Ownername,
@@ -42,23 +42,7 @@ const postHandler = async (req, res) => {
   });
   const cars = await newCar.save();
   await db.disconnect();
-  res.send({ message: 'Car added successfully!', cars });
-};
-
-const getHandler = async (req, res) => {
-  await db.connect();
-  const cars = await Cars.find({});
-  await db.disconnect();
-  res.send(cars);
-};
-
-const handler = async (req, res) => {
-  if (req.method === 'GET') {
-    return getHandler(req, res);
-  } if (req.method === 'POST') {
-    return postHandler(req, res);
-  }
-  return res.status(400).send({ message: 'Bad request!' });
+  res.send({ message: '500 added successfully!', cars });
 };
 
 export default handler;
