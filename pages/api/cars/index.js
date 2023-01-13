@@ -4,45 +4,45 @@ import db from '../../../utils/db';
 const postHandler = async (req, res) => {
   await db.connect();
   const newCar = new Cars({
-    Ownername: '',
-    manufacturer: '',
-    model: '',
-    year: '',
-    registration: '',
-    odometer: '',
-    transmission: '',
-    fuel: '',
+    Ownername: req.body.Ownername,
+    manufacturer: req.body.manufacturer,
+    model: req.body.model,
+    year: req.body.year,
+    registration: req.body.registration,
+    odometer: req.body.odometer,
+    transmission: req.body.transmission,
+    fuel: req.body.fuel,
     farol: {
-      model: '',
-      buyDate: '',
-      location: '',
+      model: req.body.farolModel,
+      buyDate: req.body.farolBuyDate,
+      location: req.body.farolLocation,
     },
     tires: {
-      model: '',
-      buyDate: '',
-      frontSize: '',
-      rearSize: '',
-      location: '',
+      model: req.body.tiresModel,
+      buyDate: req.body.tiresBuyDate,
+      frontSize: req.body.tiresFrontSize,
+      rearSize: req.body.tiresRearSize,
+      location: req.body.tiresLocation,
     },
     brakes: {
-      model: '',
-      buyDate: '',
-      location: '',
+      model: req.body.brakesModel,
+      buyDate: req.body.brakesBuyDate,
+      location: req.body.brakesLocation,
     },
     battery: {
-      model: '',
-      buyDate: '',
-      location: '',
+      model: req.body.batteryModel,
+      buyDate: req.body.batteryBuyDate,
+      location: req.body.batteryLocation,
     },
     oil: {
-      model: '',
-      buyDate: '',
-      location: '',
+      model: req.body.oilModel,
+      buyDate: req.body.oilBuyDate,
+      location: req.body.oilLocation,
     },
   });
   const cars = await newCar.save();
   await db.disconnect();
-  res.send({ message: 'Carro adicionado com sucesso!', cars });
+  res.send({ message: 'Car added successfully!', cars });
 };
 
 const getHandler = async (req, res) => {

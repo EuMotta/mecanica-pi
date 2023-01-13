@@ -89,18 +89,15 @@ const CarsForm = () => {
     console.log(result);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      {/*       {carsList.map((item) => (
-              <label>
-                Name:
-                <input
-                  type="text"
-                  value={item.value}
-                  onChange={(e) => item.setValue(e.target.value)}
-                />
-              </label>
-            ))} */}
-
+    <form onSubmit={handleSubmit} className="grid grid-cols-5 form">
+      <label>
+        OwnerName:
+        <input
+          type="text"
+          value={Ownername}
+          onChange={(e) => setOwnername(e.target.value)}
+        />
+      </label>
       <label>
         Manufacturer:
         <input
