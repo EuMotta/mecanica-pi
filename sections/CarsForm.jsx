@@ -85,6 +85,7 @@ const CarsForm = () => {
       }),
     });
     const result = await response.json();
+    console.log(farolModel);
     console.log(result);
     console.log(cars);
   };

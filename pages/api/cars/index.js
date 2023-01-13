@@ -58,7 +58,7 @@ const handler = async (req, res) => {
   } if (req.method === 'POST') {
     return postHandler(req, res);
   }
-  return res.status(400).send({ message: 'Deu merda!' });
+  return res.status(400).send({ message: 'Deu ruim!' });
 };
 
 export default handler;
