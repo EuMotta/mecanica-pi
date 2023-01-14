@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.form{
+  @apply grid grid-cols-3 gap-x-10;
+}
 .form input{
   @apply border-2 border-red-200;
 }
 .form label {
+  @apply flex justify-between items-center;
 }
