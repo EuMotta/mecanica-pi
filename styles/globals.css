@@ -2,12 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-.form{
-  @apply grid grid-cols-3 gap-x-10;
+.bg-aliceblue {
+  background-color: #f0f8ff;
 }
-.form input{
-  @apply border-2 border-red-200;
+
+.form {
+  @apply  m-5 p-5 bg-gray-200 rounded-lg;
 }
+
+.form input {
+  @apply border-2 border-blue-500 p-1 rounded-lg w-full;
+}
+
 .form label {
-  @apply flex justify-between items-center;
+  @apply font-medium text-lg mb-2;
+}
+
+.form select {
+  @apply border-2 border-blue-500 p-2 rounded-lg;
+}
+
+.form-veicular button {
+  @apply bg-blue-500 text-white rounded-lg p-2 hover:bg-blue-600;
+}
+
+.glassmorphism {
+  background: rgba(206, 206, 206, 0.2);
+  box-shadow: 0 5px 5px 0 rgba(109, 31, 135, 0.37);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* elements */
+h1 {
+  @apply font-bold mb-2  text-2xl md:text-3xl lg:text-4xl;
+}
+
+h2 {
+  @apply font-bold mb-1  text-xl md:text-2xl lg:text-3xl;
+}
+
+h3 {
+  @apply font-bold font-mono text-lg md:text-xl lg:text-2xl;
+}
+
+h4 {
+  @apply font-bold font-mono text-base md:text-lg lg:text-xl;
+}
+
+h5 {
+  @apply font-bold text-sm md:text-base lg:text-lg;
+}
+
+p {
+  @apply text-base font-mono md:text-lg lg:text-xl;
+}
+
+blockquote {
+  @apply font-bold italic text-xl md:text-2xl lg:text-3xl;
+}
+
+code {
+  @apply font-mono text-xs md:text-sm lg:text-base;
+}
+
+label {
+  @apply font-bold text-sm md:text-base lg:text-lg;
+}
+
+button {
+  @apply font-bold text-sm md:text-base lg:text-lg;
+}
+
+select {
+  @apply font-bold text-sm md:text-base lg:text-lg;
+}
+
+table {
+  @apply font-bold text-sm md:text-base lg:text-lg;
+}
+
+th {
+  @apply font-bold text-sm md:text-base lg:text-lg;
+}
+
+td {
+  @apply text-sm md:text-base lg:text-lg;
+}
+
+caption {
+  @apply font-bold text-base md:text-lg lg:text-xl;
+}
+
+small {
+  @apply text-xs md:text-sm lg:text-base;
+}
+
+strong {
+  @apply font-bold text-base md:text-lg lg:text-xl;
 }
