@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { carsList } from '../constants';
 import styles from '../styles';
 
 const CarsForm = () => {
@@ -90,280 +89,221 @@ const CarsForm = () => {
     console.log(result);
     console.log(cars);
   };
+  const formItems = [
+    {
+      name: 'Nome do proprietario:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnername(e.target.value),
+    },
+    {
+      name: 'Fabricante:',
+      type: 'select',
+      value: manufacturer,
+      onChange: (e) => setManufacturer(e.target.value),
+      options: [
+        { value: '', label: 'Selecione a Fabricante' },
+        { value: 'Wolkswagen', label: 'Wolkswagen' },
+        { value: 'Toyota', label: 'Toyota' },
+        { value: 'Ford', label: 'Ford' },
+        { value: 'Chevrolet', label: 'Chevrolet' },
+        { value: 'Hyundai', label: 'Hyundai' },
+        { value: 'Fiat', label: 'Fiat' },
+        { value: 'Honda', label: 'Honda' },
+        { value: 'Jeep', label: 'Jeep' },
+        { value: 'Kia', label: 'Kia' },
+        { value: 'Mitsubishi', label: 'Mitsubishi' },
+        { value: 'Nissan', label: 'Nissan' },
+        { value: 'Peugeot', label: 'Peugeot' },
+        { value: 'Renault', label: 'Renault' },
+        { value: 'Suzuki', label: 'Suzuki' },
+        { value: 'Volkswagen', label: 'Volkswagen' },
+        { value: 'Citroen', label: 'Citroen' },
+        { value: 'BMW', label: 'BMW' },
+        { value: 'Mercedes-Benz', label: 'Mercedes-Benz' },
+        { value: 'Audi', label: 'Audi' },
+        { value: 'Porsche', label: 'Porsche' },
+        { value: 'Jeep', label: 'Jeep' },
+        { value: 'Scania', label: 'Scania' },
+        { value: 'JAC Motors', label: 'JAC Motors' },
+      ],
+    },
+    {
+      name: 'Modelo:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setModel(e.target.value),
+    },
+    {
+      name: 'Ano:',
+      type: 'text',
+      value: year,
+      onChange: (e) => setYear(e.target.value),
+      maxLength: '10',
+      title: 'Data inválida, insira no formato DD/MM/AAAA',
+      placeholder: '__/__/____',
+    },
+    {
+      name: 'Renavam:',
+      type: 'text',
+      value: registration,
+      onChange: (e) => setRegistration(e.target.value),
+      maxLength: '11',
+    },
+    {
+      name: 'Odometro:',
+      type: 'text',
+      value: odometer,
+      onChange: (e) => setOdometer(e.target.value),
+    },
+    {
+      name: 'Transmissão:',
+      type: 'text',
+      value: transmission,
+      onChange: (e) => setTransmission(e.target.value),
+    },
+    {
+      name: 'Combustível:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setFuel(e.target.value),
+    },
+    {
+      name: 'Modelo do Farol:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setFarolModel(e.target.value),
+    },
+    {
+      name: 'Data de compra do farol:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setFarolBuyDate(e.target.value),
+    },
+    {
+      name: 'Local de compra do farol:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setFarolLocation(e.target.value),
+    },
+    {
+      name: 'Modelo da roda:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setTiresModel(e.target.value),
+    },
+    {
+      name: 'Data de compra da roda:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setTiresBuyDate(e.target.value),
+    },
+    {
+      name: 'Tamanho da roda frontal:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setTiresFrontSize(e.target.value),
+    },
+    {
+      name: 'Tamanho da roda traseira:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setTiresRearSize(e.target.value),
+    },
+    {
+      name: 'Local de compra das rodas:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setTiresLocation(e.target.value),
+    },
+    {
+      name: 'Modelo do freio:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setBrakesModel(e.target.value),
+    },
+    {
+      name: 'Data de compra do freio:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setBrakesBuyDate(e.target.value),
+    },
+    {
+      name: 'Local de compra do freio:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setBrakesLocation(e.target.value),
+    },
+    {
+      name: 'Modelo da bateria:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setBatteryModel(e.target.value),
+    },
+    {
+      name: 'Data de compra da bateria:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setBatteryBuyDate(e.target.value),
+    },
+    {
+      name: 'Local de compra da bateria:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setBatteryLocation(e.target.value),
+    },
+    {
+      name: 'Modelo do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setOilModel(e.target.value),
+    },
+    {
+      name: 'Data de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setOilBuyDate(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setOilLocation(e.target.value),
+    },
+  ];
   return (
-    <form onSubmit={handleSubmit} className={`${styles.paddings} form`}>
-      <div className="grid grid-cols-2">
-        <div className="glassmorphism p-5">
-          <h2 className="text-center">Informações iniciais</h2>
-          <div className="flex flex-wrap">
-            <label>
-              <div className="">Nome do proprietario:</div>
-              <input
-                type="text"
-                value={Ownername}
-                onChange={(e) => setOwnername(e.target.value)}
-              />
-            </label>
-            <label>
-              <div className="">Fabricante:</div>
+    <form onSubmit={handleSubmit} className={`${styles.yPaddings} form`}>
+      <div className="glassmorphism p-5 grid grid-cols-2 gap-x-10">
+        <div className="col-span-2 text-center p-5">
+          <h2>Informações essenciais</h2>
+        </div>
+        {formItems.slice(0, 8).map((item, index) => (
+          <label key={index}>
+            <div className="">{item.name}</div>
+            {item.type === 'select' ? (
               <select
-                value={manufacturer}
-                onChange={(e) => setManufacturer(e.target.value)}
+                value={item.value}
+                onChange={item.onChange}
                 className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
               >
-                <option value="" disabled>
-                  Selecione a Fabricante
-                </option>
-                <option value="Wolkswagen">Wolkswagen</option>
-                <option value="Toyota">Toyota</option>
-                <option value="Ford">Ford</option>
-                <option value="Chevrolet">Chevrolet</option>
-                <option value="Hyundai">Hyundai</option>
-                <option value="Fiat">Fiat</option>
-                <option value="Honda">Honda</option>
-                <option value="Jeep">Jeep</option>
-                <option value="Kia">Kia</option>
-                <option value="Mitsubishi">Mitsubishi</option>
-                <option value="Nissan">Nissan</option>
-                <option value="Peugeot">Peugeot</option>
-                <option value="Renault">Renault</option>
-                <option value="Suzuki">Suzuki</option>
-                <option value="Volkswagen">Volkswagen</option>
-                <option value="Citroen">Citroen</option>
-                <option value="BMW">BMW</option>
-                <option value="Mercedes-Benz">Mercedes-Benz</option>
-                <option value="Audi">Audi</option>
-                <option value="Porsche">Porsche</option>
-                <option value="Jeep">Jeep</option>
-                <option value="Scania">Scania</option>
-                <option value="Scania">JAC Motors</option>
+                {item.options.map((option, i) => (
+                  <option key={i} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
               </select>
-            </label>
-            <label>
-              <div className="">Modelo:</div>
+            ) : (
               <input
-                type="text"
-                value={model}
-                onChange={(e) => setModel(e.target.value)}
+                type={item.type}
+                onChange={item.onChange}
+                maxLength={item.maxLength}
+                title={item.title}
+                placeholder={item.placeholder}
               />
-            </label>
-            <label>
-              <div className="">Ano:</div>
-              <input
-                type="text"
-                value={year}
-                onInput={(e) =>
-                  setYear(
-                    e.target.value.replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3'),
-                  )
-                }
-                maxLength="10"
-                title="Data inválida, insira no formato DD/MM/AAAA"
-                placeholder="__/__/____"
-                required
-              />
-            </label>
-            <label>
-              <div className="">Renavam:</div>
-              <input
-                type="text"
-                value={registration}
-                onChange={(e) => setRegistration(e.target.value)}
-                maxLength="11"
-              />
-            </label>
-          </div>
-        </div>
-        <div className="glassmorphism p-5 gap-2 ">
-          <div className="flex flex-wrap">
-            <h2 className="text-center">Informações veiculares:</h2>
-            <label>
-              <div className="">Odometro:</div>
-              <input
-                type="text"
-                value={odometer}
-                onChange={(e) => setOdometer(e.target.value)}
-                maxLength="6"
-              />
-            </label>
-            <label>
-              <div className="">Transmissão:</div>
-              <input
-                type="text"
-                value={transmission}
-                onChange={(e) => setTransmission(e.target.value)}
-              />
-            </label>
-            <label>
-              <div className="">Tipo de Combustivel:</div>
-              <input
-                type="text"
-                value={fuel}
-                onChange={(e) => setFuel(e.target.value)}
-              />
-            </label>
-          </div>
-        </div>
-        <div className="glassmorphism p-5 col-span-2">
-          <h2 className="text-center">Fabricante:</h2>
-          <div className="flex flex-wrap">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-              <div className="border p-5">
-                <h3 className="text-center">farol</h3>
-                <label>
-                  <div>Modelo do farol:</div>
-                  <input
-                    type="text"
-                    value={farolModel}
-                    onChange={(e) => setFarolModel(e.target.value)}
-                  />
-                </label>
-                <label>
-                  <div>Data de compra:</div>
-                  <input
-                    type="text"
-                    value={farolBuyDate}
-                    onChange={(e) => setFarolBuyDate(e.target.value)}
-                  />
-                </label>
-                <label>
-                  <div>Local de compra:</div>
-                  <input
-                    type="text"
-                    value={farolLocation}
-                    onChange={(e) => setFarolLocation(e.target.value)}
-                  />
-                </label>
-              </div>
-              <div className="border p-5">
-                <h3 className="text-center">Rodas</h3>
-                <label>
-                  <div>Modelo da roda:</div>
-                  <input
-                    type="text"
-                    value={tiresModel}
-                    onChange={(e) => setTiresModel(e.target.value)}
-                  />
-                </label>
-                <label>
-                  <div>Data de compra:</div>
-                  <input
-                    type="text"
-                    value={tiresBuyDate}
-                    onChange={(e) => setTiresBuyDate(e.target.value)}
-                  />
-                </label>
-                <label>
-                  <div>Tamanho frontal:</div>
-                  <input
-                    type="text"
-                    value={tiresFrontSize}
-                    onChange={(e) => setTiresFrontSize(e.target.value)}
-                  />
-                </label>
-                <label>
-                  <div>Tamanho traseiro:</div>
-                  <input
-                    type="text"
-                    value={tiresRearSize}
-                    onChange={(e) => setTiresRearSize(e.target.value)}
-                  />
-                </label>
-                <label>
-                  <div>Local de compra:</div>
-                  <input
-                    type="text"
-                    value={tiresLocation}
-                    onChange={(e) => setTiresLocation(e.target.value)}
-                  />
-                </label>
-              </div>
-              <div className="border p-5">
-                <h3>Freios e bateria:</h3>
-                <label>
-                  Brakes Model:
-                  <input
-                    type="text"
-                    value={brakesModel}
-                    onChange={(e) => setBrakesModel(e.target.value)}
-                  />
-                </label>
-                <label>
-                  Brakes Buy Date:
-                  <input
-                    type="text"
-                    value={brakesBuyDate}
-                    onChange={(e) => setBrakesBuyDate(e.target.value)}
-                  />
-                </label>
-                <label>
-                  Brakes Location:
-                  <input
-                    type="text"
-                    value={brakesLocation}
-                    onChange={(e) => setBrakesLocation(e.target.value)}
-                  />
-                </label>
-                <br />
-                <br />
-                <label>
-                  Battery Model:
-                  <input
-                    type="text"
-                    value={batteryModel}
-                    onChange={(e) => setBatteryModel(e.target.value)}
-                  />
-                </label>
-                <label>
-                  Battery Buy Date:
-                  <input
-                    type="text"
-                    value={batteryBuyDate}
-                    onChange={(e) => setBatteryBuyDate(e.target.value)}
-                  />
-                </label>
-                <label>
-                  Battery Location:
-                  <input
-                    type="text"
-                    value={batteryLocation}
-                    onChange={(e) => setBatteryLocation(e.target.value)}
-                  />
-                </label>
-              </div>
-              <div className="border p-5">
-                <h3 className="text-center">Óleo:</h3>
-                <label>
-                  Oil Model:
-                  <input
-                    type="text"
-                    value={oilModel}
-                    onChange={(e) => setOilModel(e.target.value)}
-                  />
-                </label>
-                <label>
-                  Oil Buy Date:
-                  <input
-                    type="text"
-                    value={oilBuyDate}
-                    onChange={(e) => setOilBuyDate(e.target.value)}
-                  />
-                </label>
-                <label>
-                  Oil Location:
-                  <input
-                    type="text"
-                    value={oilLocation}
-                    onChange={(e) => setOilLocation(e.target.value)}
-                  />
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
+            )}
+          </label>
+        ))}
       </div>
-      <br />
-      <br />
       <button type="submit">Submit</button>
     </form>
   );

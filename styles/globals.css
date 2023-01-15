@@ -11,7 +11,7 @@
 }
 
 .form input {
-  @apply border-2 border-blue-500 p-1 rounded-lg w-full;
+  @apply border-2 border-blue-500 px-1 rounded-md w-full;
 }
 
 .form label {
@@ -28,7 +28,7 @@
 
 .glassmorphism {
   background: rgba(206, 206, 206, 0.2);
-  box-shadow: 0 5px 5px 0 rgba(109, 31, 135, 0.37);
+  @apply shadow-md shadow-slate-600 m-5;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }

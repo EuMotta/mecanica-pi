@@ -1,13 +1,6 @@
 module.exports = {
   cars: [
     {
-      owner: {
-        model: 'Michelin',
-        buyDate: '01/01/2022',
-        frontSize: '225/45 R17',
-        rearSize: '225/45 R17',
-        location: 'Mario',
-      },
       Ownername: 'José Antonio',
       manufacturer: 'Wolkswagen',
       model: 'Golf',
