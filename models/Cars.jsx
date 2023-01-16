@@ -45,6 +45,39 @@ const carsShema = new mongoose.Schema(
         buyDate: { type: String, required: false },
         location: { type: String, required: false },
       },
+      moreInformations: {
+        maintenanceHistory: {
+          maintenance1: {
+            description: { type: String, required: false },
+            date: { type: String, required: false },
+            location: { type: String, required: false },
+          },
+          maintenance2: {
+            description: { type: String, required: false },
+            date: { type: String, required: false },
+            location: { type: String, required: false },
+          },
+        },
+        insurance: {
+          company: { type: String, required: false },
+          policyNumber: { type: String, required: false },
+          expirationDate: { type: String, required: false },
+        },
+        warranty: {
+          provider: { type: String, required: false },
+          terms: { type: String, required: false },
+          expirationDate: { type: String, required: false },
+        },
+        licensing: {
+          expirationDate: { type: String, required: false },
+          licenseNumber: { type: String, required: false },
+          state: { type: String, required: false },
+        },
+        performance: {
+          maxSpeed: { type: String, required: false },
+          fuelEfficiency: { type: String, required: false },
+        },
+      },
     },
   },
   {

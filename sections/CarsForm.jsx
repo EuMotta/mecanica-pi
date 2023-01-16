@@ -35,6 +35,23 @@ const CarsForm = () => {
   const [oilModel, setOilModel] = useState('');
   const [oilBuyDate, setOilBuyDate] = useState('');
   const [oilLocation, setOilLocation] = useState('');
+  const [maintenance1Description, setMaintenance1Description] = useState('');
+  const [maintenance1Date, setMaintenance1Date] = useState('');
+  const [maintenance1Location, setMaintenance1Location] = useState('');
+  const [maintenance2Description, setMaintenance2Description] = useState('');
+  const [maintenance2Date, setmaintenance2Date] = useState('');
+  const [maintenance2Location, setMaintenance2Location] = useState('');
+  const [insuranceCompany, setInsuranceCompany] = useState('');
+  const [insurancePolicyNumber, setInsurancePolicyNumber] = useState('');
+  const [insuranceExpirationDate, setInsuranceExpirationDate] = useState('');
+  const [warrantyProvider, setWarrantyProvider] = useState('');
+  const [warrantyTerms, setWarrantyTerms] = useState('');
+  const [warrantyExpirationDate, setWarrantyExpirationDate] = useState('');
+  const [licenseExpirationDate, setLicenseExpirationDate] = useState('');
+  const [licensingLicenseNumber, setLicensingLicenseNumber] = useState('');
+  const [licensingState, setLicensingState] = useState('');
+  const [performanceMaxSpeed, setPerformanceMaxSpeed] = useState('');
+  const [performanceFuelEfficiency, setPerformanceFuelEfficiency] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -95,6 +112,39 @@ const CarsForm = () => {
             model: oilModel,
             buyDate: oilBuyDate,
             location: oilLocation,
+          },
+          moreInformations: {
+            maintenanceHistory: {
+              maintenance1: {
+                description: maintenance1Description,
+                date: maintenance1Date,
+                location: maintenance1Location,
+              },
+              maintenance2: {
+                description: maintenance2Description,
+                date: maintenance2Date,
+                location: maintenance2Location,
+              },
+            },
+            insurance: {
+              company: insuranceCompany,
+              policyNumber: insurancePolicyNumber,
+              expirationDate: insuranceExpirationDate,
+            },
+            warranty: {
+              provider: warrantyProvider,
+              terms: warrantyTerms,
+              expirationDate: warrantyExpirationDate,
+            },
+            licensing: {
+              expirationDate: licenseExpirationDate,
+              licenseNumber: licensingLicenseNumber,
+              state: licensingState,
+            },
+            performance: {
+              maxSpeed: performanceMaxSpeed,
+              fuelEfficiency: performanceFuelEfficiency,
+            },
           },
         },
       }),
@@ -313,6 +363,108 @@ const CarsForm = () => {
       type: 'text',
       value: fuel,
       onChange: (e) => setOilLocation(e.target.value),
+    },
+    {
+      name: 'Manutenção 1 descrição:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setMaintenance1Description(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setMaintenance1Date(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setMaintenance1Location(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setMaintenance2Description(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setmaintenance2Date(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setMaintenance2Location(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setInsuranceCompany(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setInsurancePolicyNumber(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setInsuranceExpirationDate(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setWarrantyProvider(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setWarrantyTerms(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setWarrantyExpirationDate(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setLicenseExpirationDate(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setLicensingLicenseNumber(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setLicensingState(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setPerformanceMaxSpeed(e.target.value),
+    },
+    {
+      name: 'Local de compra do óleo:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setPerformanceFuelEfficiency(e.target.value),
     },
   ];
   return (

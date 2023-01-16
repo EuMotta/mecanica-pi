@@ -47,6 +47,39 @@ const handler = async (req, res) => {
         buyDate: req.body.car.oil.buyDate,
         location: req.body.car.oil.location,
       },
+      moreInformations: {
+        maintenanceHistory: {
+          maintenance1: {
+            description: req.body.car.moreInformations.maintenanceHistory.maintenance1.description,
+            date: req.body.car.moreInformations.maintenanceHistory.maintenance1.date,
+            location: req.body.car.moreInformations.maintenanceHistory.maintenance1.location,
+          },
+          maintenance2: {
+            description: req.body.car.moreInformations.maintenanceHistory.maintenance2.description,
+            date: req.body.car.moreInformations.maintenanceHistory.maintenance2.date,
+            location: req.body.car.moreInformations.maintenanceHistory.maintenance2.location,
+          },
+        },
+        insurance: {
+          company: req.body.car.moreInformations.insurance.company,
+          policyNumber: req.body.car.moreInformations.insurance.policyNumber,
+          expirationDate: req.body.car.moreInformations.insurance.expirationDate,
+        },
+        warranty: {
+          provider: req.body.car.moreInformations.warranty.provider,
+          terms: req.body.car.moreInformations.warranty.terms,
+          expirationDate: req.body.car.moreInformations.warranty.expirationDate,
+        },
+        licensing: {
+          expirationDate: req.body.car.moreInformations.licensing.expirationDate,
+          licenseNumber: req.body.car.moreInformations.licensing.licenseNumber,
+          state: req.body.car.moreInformations.licensing.state,
+        },
+        performance: {
+          maxSpeed: req.body.car.moreInformations.performance.maxSpeed,
+          fuelEfficiency: req.body.car.moreInformations.performance.fuelEfficiency,
+        },
+      },
     },
   });
   const cars = await newCar.save();
