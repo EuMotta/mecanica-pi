@@ -4,6 +4,13 @@ import db from '../../../../utils/db';
 const handler = async (req, res) => {
   await db.connect();
   const newCar = new Cars({
+    owner: {
+      name: req.body.owner.name,
+      lastName: req.body.owner.lastName,
+      address: req.body.owner.address,
+      email: req.body.owner.email,
+      phone: req.body.owner.phone,
+    },
     Ownername: req.body.Ownername,
     manufacturer: req.body.manufacturer,
     model: req.body.model,

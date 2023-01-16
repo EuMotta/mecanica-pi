@@ -6,6 +6,11 @@ import styles from '../styles';
 const CarsForm = () => {
   const [cars, setCars] = useState('');
   const [Ownername, setOwnername] = useState('');
+  const [ownerName, setOwnerName] = useState('');
+  const [ownerLastName, setOwnerLastName] = useState('');
+  const [ownerAddress, setOwnerAddress] = useState('');
+  const [ownerEmail, setOwnerEmail] = useState('');
+  const [ownerPhone, setOwnerPhone] = useState('');
   const [manufacturer, setManufacturer] = useState('');
   const [model, setModel] = useState('');
   const [year, setYear] = useState('');
@@ -48,6 +53,13 @@ const CarsForm = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        owner: {
+          name: ownerName,
+          lastName: ownerLastName,
+          address: ownerAddress,
+          email: ownerEmail,
+          phone: ownerPhone,
+        },
         Ownername,
         manufacturer,
         model,
@@ -95,6 +107,36 @@ const CarsForm = () => {
       type: 'text',
       value: model,
       onChange: (e) => setOwnername(e.target.value),
+    },
+    {
+      name: 'Nome do proprietario:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnerName(e.target.value),
+    },
+    {
+      name: 'Nome do proprietario:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnerLastName(e.target.value),
+    },
+    {
+      name: 'Nome do proprietario:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnerAddress(e.target.value),
+    },
+    {
+      name: 'Nome do proprietario:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnerEmail(e.target.value),
+    },
+    {
+      name: 'Nome do proprietario:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnerPhone(e.target.value),
     },
     {
       name: 'Fabricante:',

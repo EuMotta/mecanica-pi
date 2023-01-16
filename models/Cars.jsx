@@ -3,11 +3,11 @@ import mongoose from 'mongoose';
 const carsShema = new mongoose.Schema(
   {
     owner: {
-      model: { type: String, required: false },
-      buyDate: { type: String, required: false },
-      frontSize: { type: String, required: false },
-      rearSize: { type: String, required: false },
-      location: { type: String, required: false },
+      name: { type: String, required: false },
+      lastName: { type: String, required: false },
+      address: { type: String, required: false },
+      email: { type: String, required: false },
+      phone: { type: String, required: false },
     },
     Ownername: { type: String, required: false },
     manufacturer: { type: String, required: false },
