@@ -158,37 +158,37 @@ const CarsForm = () => {
       name: 'Nome do proprietario:',
       type: 'text',
       value: model,
-      onChange: (e) => setOwnername(e.target.value),
-    },
-    {
-      name: 'Nome do proprietario:',
-      type: 'text',
-      value: model,
       onChange: (e) => setOwnerName(e.target.value),
     },
     {
-      name: 'Nome do proprietario:',
+      name: 'Sobrenome do proprietario:',
       type: 'text',
       value: model,
       onChange: (e) => setOwnerLastName(e.target.value),
     },
     {
-      name: 'Nome do proprietario:',
+      name: 'Endereço do proprietario:',
       type: 'text',
       value: model,
       onChange: (e) => setOwnerAddress(e.target.value),
     },
     {
-      name: 'Nome do proprietario:',
+      name: 'Email do proprietario:',
       type: 'text',
       value: model,
       onChange: (e) => setOwnerEmail(e.target.value),
     },
     {
-      name: 'Nome do proprietario:',
+      name: 'Telefone do proprietario:',
       type: 'text',
       value: model,
       onChange: (e) => setOwnerPhone(e.target.value),
+    },
+    {
+      name: 'Nome do proprietario do carro:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnername(e.target.value),
     },
     {
       name: 'Fabricante:',
@@ -371,97 +371,97 @@ const CarsForm = () => {
       onChange: (e) => setMaintenance1Description(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Manutenção 1 data:',
       type: 'text',
       value: fuel,
       onChange: (e) => setMaintenance1Date(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Manutenção 1 local:',
       type: 'text',
       value: fuel,
       onChange: (e) => setMaintenance1Location(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Manutenção 2 descrição:',
       type: 'text',
       value: fuel,
       onChange: (e) => setMaintenance2Description(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Manutenção 2 data:',
       type: 'text',
       value: fuel,
       onChange: (e) => setmaintenance2Date(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Manutenção 2 local:',
       type: 'text',
       value: fuel,
       onChange: (e) => setMaintenance2Location(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Empresa do seguro:',
       type: 'text',
       value: fuel,
       onChange: (e) => setInsuranceCompany(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Codigo do seguro:',
       type: 'text',
       value: fuel,
       onChange: (e) => setInsurancePolicyNumber(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Data de validade:',
       type: 'text',
       value: fuel,
       onChange: (e) => setInsuranceExpirationDate(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Fornecedor da Garantia:',
       type: 'text',
       value: fuel,
       onChange: (e) => setWarrantyProvider(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Termos da Garantia:',
       type: 'text',
       value: fuel,
       onChange: (e) => setWarrantyTerms(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Data de expiração da Garantia:',
       type: 'text',
       value: fuel,
       onChange: (e) => setWarrantyExpirationDate(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
-      type: 'text',
-      value: fuel,
-      onChange: (e) => setLicenseExpirationDate(e.target.value),
-    },
-    {
-      name: 'Local de compra do óleo:',
+      name: 'Numero da Licensa:',
       type: 'text',
       value: fuel,
       onChange: (e) => setLicensingLicenseNumber(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Data de expiração da Licensa:',
+      type: 'text',
+      value: fuel,
+      onChange: (e) => setLicenseExpirationDate(e.target.value),
+    },
+    {
+      name: 'Estado da Licensa:',
       type: 'text',
       value: fuel,
       onChange: (e) => setLicensingState(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Velocidade máxima:',
       type: 'text',
       value: fuel,
       onChange: (e) => setPerformanceMaxSpeed(e.target.value),
     },
     {
-      name: 'Local de compra do óleo:',
+      name: 'Eficiencia do combustivel:',
       type: 'text',
       value: fuel,
       onChange: (e) => setPerformanceFuelEfficiency(e.target.value),
@@ -469,16 +469,15 @@ const CarsForm = () => {
   ];
   return (
     <form onSubmit={handleSubmit} className={`${styles.yPaddings} form`}>
-      <div className="glassmorphism p-5 grid grid-cols-2 gap-x-10">
-        <div className="col-span-2 text-center p-5">
+      <div className="glassmorphism p-5 grid grid-cols-3 gap-x-10">
+        <div className="col-span-3 text-center p-5">
           <h2>Informações essenciais</h2>
         </div>
-        {formItems.slice(0, 8).map((item, index) => (
+        {formItems.slice(0, 5).map((item, index) => (
           <label key={index}>
             <div className="">{item.name}</div>
             {item.type === 'select' ? (
               <select
-                value={item.value}
                 onChange={item.onChange}
                 className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
               >
@@ -499,6 +498,306 @@ const CarsForm = () => {
             )}
           </label>
         ))}
+      </div>
+      <div className="glassmorphismp-5 gap-10">
+        <div className="col-span-2 text-center p-5">
+          <h2>Informações do veiculo</h2>
+        </div>
+        <div className="border grid  grid-cols-3 gap-x-10  bg-slate-300 rounded-lg shadow shadow-slate-600 p-2">
+          <div className="col-span-3 text-center p-5">
+            <h4>Principais</h4>
+          </div>
+          {formItems.slice(5, 13).map((item, index) => (
+            <label key={index}>
+              <div className="">{item.name}</div>
+              {item.type === 'select' ? (
+                <select
+                  onChange={item.onChange}
+                  className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
+                >
+                  {item.options.map((option, i) => (
+                    <option key={i} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  type={item.type}
+                  onChange={item.onChange}
+                  maxLength={item.maxLength}
+                  title={item.title}
+                  placeholder={item.placeholder}
+                />
+              )}
+            </label>
+          ))}
+        </div>
+      </div>
+      <div className="glassmorphism grid  grid-cols-3 p-5 gap-10">
+        <div className="col-span-3 text-center p-5">
+          <h2>Informações complementares</h2>
+        </div>
+        <div className="border bg-slate-300 rounded-lg shadow shadow-slate-600 p-2">
+          <div className="col-span-3 text-center p-5">
+            <h4>Manutenção 1</h4>
+          </div>
+          {formItems.slice(30, 33).map((item, index) => (
+            <label key={index}>
+              <div className="">{item.name}</div>
+              {item.type === 'select' ? (
+                <select
+                  onChange={item.onChange}
+                  className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
+                >
+                  {item.options.map((option, i) => (
+                    <option key={i} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  type={item.type}
+                  onChange={item.onChange}
+                  maxLength={item.maxLength}
+                  title={item.title}
+                  placeholder={item.placeholder}
+                />
+              )}
+            </label>
+          ))}
+          <div className="col-span-3 text-center p-5">
+            <h4>Manutenção 2</h4>
+          </div>
+          {formItems.slice(33, 36).map((item, index) => (
+            <label key={index}>
+              <div className="">{item.name}</div>
+              {item.type === 'select' ? (
+                <select
+                  onChange={item.onChange}
+                  className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
+                >
+                  {item.options.map((option, i) => (
+                    <option key={i} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  type={item.type}
+                  onChange={item.onChange}
+                  maxLength={item.maxLength}
+                  title={item.title}
+                  placeholder={item.placeholder}
+                />
+              )}
+            </label>
+          ))}
+        </div>
+        <div className="border bg-slate-300 rounded-lg shadow shadow-slate-600 p-2">
+          <div className="col-span-3 text-center p-5">
+            <h4>Seguro</h4>
+          </div>
+          {formItems.slice(36, 39).map((item, index) => (
+            <label key={index}>
+              <div className="">{item.name}</div>
+              {item.type === 'select' ? (
+                <select
+                  onChange={item.onChange}
+                  className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
+                >
+                  {item.options.map((option, i) => (
+                    <option key={i} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  type={item.type}
+                  onChange={item.onChange}
+                  maxLength={item.maxLength}
+                  title={item.title}
+                  placeholder={item.placeholder}
+                />
+              )}
+            </label>
+          ))}
+          <div className="col-span-3 text-center p-5">
+            <h4>Garantia</h4>
+          </div>
+          {formItems.slice(39, 42).map((item, index) => (
+            <label key={index}>
+              <div className="">{item.name}</div>
+              {item.type === 'select' ? (
+                <select
+                  onChange={item.onChange}
+                  className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
+                >
+                  {item.options.map((option, i) => (
+                    <option key={i} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  type={item.type}
+                  onChange={item.onChange}
+                  maxLength={item.maxLength}
+                  title={item.title}
+                  placeholder={item.placeholder}
+                />
+              )}
+            </label>
+          ))}
+        </div>
+        <div className="border bg-slate-300 rounded-lg shadow shadow-slate-600 p-2">
+          <div className="col-span-3 text-center p-5">
+            <h4>Licensa</h4>
+          </div>
+          {formItems.slice(42, 45).map((item, index) => (
+            <label key={index}>
+              <div className="">{item.name}</div>
+              {item.type === 'select' ? (
+                <select
+                  onChange={item.onChange}
+                  className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
+                >
+                  {item.options.map((option, i) => (
+                    <option key={i} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  type={item.type}
+                  onChange={item.onChange}
+                  maxLength={item.maxLength}
+                  title={item.title}
+                  placeholder={item.placeholder}
+                />
+              )}
+            </label>
+          ))}
+          <div className="col-span-3 text-center p-5">
+            <h4>Eficiencia</h4>
+          </div>
+          {formItems.slice(45, 47).map((item, index) => (
+            <label key={index}>
+              <div className="">{item.name}</div>
+              {item.type === 'select' ? (
+                <select
+                  onChange={item.onChange}
+                  className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
+                >
+                  {item.options.map((option, i) => (
+                    <option key={i} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  type={item.type}
+                  onChange={item.onChange}
+                  maxLength={item.maxLength}
+                  title={item.title}
+                  placeholder={item.placeholder}
+                />
+              )}
+            </label>
+          ))}
+        </div>
+      </div>
+      <div className="glassmorphism p-5 grid grid-cols-3 gap-10">
+        <div className="col-span-3 text-center p-5">
+          <h2>Peças do veiculo</h2>
+        </div>
+        <div className="border bg-slate-300 rounded-lg shadow shadow-slate-600 p-2">
+          <div className="col-span-3 text-center p-5">
+            <h4>Farol</h4>
+          </div>
+          {formItems.slice(13, 16).map((item, index) => (
+            <label key={index}>
+              <div className="">{item.name}</div>
+              <input
+                type={item.type}
+                onChange={item.onChange}
+                maxLength={item.maxLength}
+                title={item.title}
+                placeholder={item.placeholder}
+              />
+            </label>
+          ))}
+          <div className="col-span-3 text-center p-5">
+            <h4>Rodas</h4>
+          </div>
+          {formItems.slice(16, 21).map((item, index) => (
+            <label key={index}>
+              <div className="">{item.name}</div>
+              <input
+                type={item.type}
+                onChange={item.onChange}
+                maxLength={item.maxLength}
+                title={item.title}
+                placeholder={item.placeholder}
+              />
+            </label>
+          ))}
+        </div>
+        <div className="border bg-slate-300 rounded-lg shadow shadow-slate-600 p-2">
+          <div className="col-span-3 text-center p-5">
+            <h4>Freio</h4>
+          </div>
+          {formItems.slice(21, 24).map((item, index) => (
+            <label key={index}>
+              <div className="">{item.name}</div>
+              <input
+                type={item.type}
+                onChange={item.onChange}
+                maxLength={item.maxLength}
+                title={item.title}
+                placeholder={item.placeholder}
+              />
+            </label>
+          ))}
+          <div className="col-span-3 text-center p-5">
+            <h4>Bateria</h4>
+          </div>
+          {formItems.slice(24, 27).map((item, index) => (
+            <label key={index}>
+              <div className="">{item.name}</div>
+              <input
+                type={item.type}
+                onChange={item.onChange}
+                maxLength={item.maxLength}
+                title={item.title}
+                placeholder={item.placeholder}
+              />
+            </label>
+          ))}
+        </div>
+        <div className="border bg-slate-300 rounded-lg shadow shadow-slate-600 p-2">
+          <div className="col-span-3 text-center p-5">
+            <h4>Oleo</h4>
+          </div>
+          {formItems.slice(27, 30).map((item, index) => (
+            <label key={index}>
+              <div className="">{item.name}</div>
+              <input
+                type={item.type}
+                onChange={item.onChange}
+                maxLength={item.maxLength}
+                title={item.title}
+                placeholder={item.placeholder}
+              />
+            </label>
+          ))}
+        </div>
       </div>
       <button type="submit">Submit</button>
     </form>
