@@ -8,6 +8,13 @@ const carsShema = new mongoose.Schema(
       address: { type: String, required: false },
       email: { type: String, required: false },
       phone: { type: String, required: false },
+      birthdate: { type: Date, required: false },
+      gender: { type: String, required: false },
+      cpf: { type: String, required: false },
+      city: { type: String, required: false },
+      state: { type: String, required: false },
+      cep: { type: String, required: false },
+      extraPhone: { type: String, required: false },
     },
     car: {
       Ownername: { type: String, required: false },

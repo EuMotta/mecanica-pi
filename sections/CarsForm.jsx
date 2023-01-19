@@ -11,6 +11,13 @@ const CarsForm = () => {
   const [ownerAddress, setOwnerAddress] = useState('');
   const [ownerEmail, setOwnerEmail] = useState('');
   const [ownerPhone, setOwnerPhone] = useState('');
+  const [ownerbirthdate, setOwnerBirthdate] = useState('');
+  const [ownerGender, setOwnerGender] = useState('');
+  const [ownerCPF, setOwnerCPF] = useState('');
+  const [ownerCity, setOwnerCity] = useState('');
+  const [ownerState, setOwnerState] = useState('');
+  const [ownerCEP, setOwnerCEP] = useState('');
+  const [ownerExtraPhone, setOwnerExtraPhone] = useState('');
   const [manufacturer, setManufacturer] = useState('');
   const [model, setModel] = useState('');
   const [year, setYear] = useState('');
@@ -76,6 +83,13 @@ const CarsForm = () => {
           address: ownerAddress,
           email: ownerEmail,
           phone: ownerPhone,
+          birthdate: ownerbirthdate,
+          gender: ownerGender,
+          cpf: ownerCPF,
+          city: ownerCity,
+          state: ownerState,
+          cep: ownerCEP,
+          extraPhone: ownerExtraPhone,
         },
         car: {
           Ownername,
@@ -177,6 +191,54 @@ const CarsForm = () => {
       type: 'text',
       value: model,
       onChange: (e) => setOwnerEmail(e.target.value),
+    },
+    {
+      name: 'Telefone do proprietario:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnerPhone(e.target.value),
+    },
+    {
+      name: 'Celular:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnerExtraPhone(e.target.value),
+    },
+    {
+      name: 'Data de nascimento:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnerBirthdate(e.target.value),
+    },
+    {
+      name: 'Gênero:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnerGender(e.target.value),
+    },
+    {
+      name: 'CPF:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnerCPF(e.target.value),
+    },
+    {
+      name: 'Cidade:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnerCity(e.target.value),
+    },
+    {
+      name: 'Estado:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnerState(e.target.value),
+    },
+    {
+      name: 'CEP:',
+      type: 'text',
+      value: model,
+      onChange: (e) => setOwnerCEP(e.target.value),
     },
     {
       name: 'Telefone do proprietario:',

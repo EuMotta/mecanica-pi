@@ -10,6 +10,13 @@ const handler = async (req, res) => {
       address: req.body.owner.address,
       email: req.body.owner.email,
       phone: req.body.owner.phone,
+      birthdate: req.body.owner.phone,
+      gender: req.body.owner.phone,
+      cpf: req.body.owner.cpf,
+      city: req.body.owner.city,
+      state: req.body.owner.state,
+      cep: req.body.owner.cep,
+      extraPhone: req.body.owner.extraPhone,
     },
     car: {
       Ownername: req.body.car.Ownername,
