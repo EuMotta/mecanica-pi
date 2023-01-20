@@ -1,4 +1,6 @@
-module.exports = {
+import bcrypt from 'bcryptjs';
+
+const data = {
   cars: [
     {
       owner: {
@@ -89,7 +91,7 @@ module.exports = {
   ],
   owner: [
     {
-      name: 'a',
+      name: 'aa',
       lastName: 'a',
       address: 'a',
       email: 'a',
@@ -176,4 +178,24 @@ module.exports = {
       },
     },
   ],
+  user: [
+    {
+      name: 'Admin',
+      lastName: 'Sobrenome',
+      image: 'imagem',
+      email: 'admin@example.com',
+      password: bcrypt.hashSync('admin'),
+      isAdmin: true,
+    },
+    {
+      name: 'User',
+      lastName: 'Sobrenome',
+      image: 'imagem',
+      email: 'user@example.com',
+      password: bcrypt.hashSync('user'),
+      isAdmin: false,
+    },
+  ],
 };
+
+export default data;

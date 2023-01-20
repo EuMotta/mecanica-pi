@@ -1,15 +1,14 @@
-import '../styles/globals.css';
+'use client';
 
-export default ({ children, title }) => (
-  <html lang="en">
-    <head>
-      <title>{title ? `${title} - MECANICA` : 'MECANICA'}</title>
-      <link rel="preconnect" href="https://stijndv.com" />
-      <link
-        rel="stylesheet"
-        href="https://stijndv.com/fonts/Eudoxus-Sans.css"
-      />
-    </head>
-    <body>{children}</body>
+import { SessionProvider } from 'next-auth/react';
+
+const RootLayout = ({ children }) => (
+  <html lang="pt">
+    <head />
+    <SessionProvider>
+      <body>{children}</body>
+    </SessionProvider>
   </html>
 );
+
+export default RootLayout;
