@@ -427,7 +427,7 @@ const CarsForm = () => {
   ];
   return (
     <form onSubmit={handleSubmit} className={`${styles.yPaddings} form`}>
-      <div className="glassmorphism p-5 grid grid-cols-3 gap-x-10">
+      <div className="glassmorphism p-4 grid grid-cols-3 gap-x-10">
         <div className="col-span-3 text-center p-5">
           <h2>Informações essenciais</h2>
         </div>
