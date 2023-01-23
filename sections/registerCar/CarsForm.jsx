@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../styles';
 
 const CarsForm = () => {
+  const [owner, setOwner] = useState('');
   const [cars, setCars] = useState('');
   const [Ownername, setOwnername] = useState('');
   const [manufacturer, setManufacturer] = useState('');
@@ -46,8 +47,18 @@ const CarsForm = () => {
   const [licensingLicenseNumber, setLicensingLicenseNumber] = useState('');
   const [licensingState, setLicensingState] = useState('');
   const [performanceMaxSpeed, setPerformanceMaxSpeed] = useState('');
-  const [performanceFuelEfficiency, setPerformanceFuelEfficiency] = useState('');
+  const [performanceFuelEfficiency, setPerformanceFuelEfficiency] =
+    useState('');
+  const [ownersData, setOwnerData] = useState([]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetch('/api/owner');
+      const data = await result.json();
+      setOwnerData(data);
+    };
+    fetchData();
+  }, []);
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetch('/api/cars');
@@ -66,6 +77,7 @@ const CarsForm = () => {
       },
       body: JSON.stringify({
         car: {
+          owner,
           Ownername,
           manufacturer,
           model,
@@ -142,6 +154,13 @@ const CarsForm = () => {
     console.log(cars);
   };
   const formItems = [
+    {
+      name: 'ID do dono:',
+      type: 'select',
+      value: owner,
+      onChange: (e) => setOwner(e.target.value),
+      options: [],
+    },
     {
       name: 'Nome do proprietario do carro:',
       type: 'text',
@@ -427,6 +446,11 @@ const CarsForm = () => {
   ];
   return (
     <form onSubmit={handleSubmit} className={`${styles.yPaddings} form`}>
+      {ownersData.map((ownerid) => (
+        <div key={ownerid._id} className="">
+          {ownerid._id}
+        </div>
+      ))}
       <div className="glassmorphism p-4 grid grid-cols-3 gap-x-10">
         <div className="col-span-3 text-center p-5">
           <h2>Informações essenciais</h2>
@@ -435,16 +459,29 @@ const CarsForm = () => {
           <label key={index}>
             <div className="">{item.name}</div>
             {item.type === 'select' ? (
-              <select
-                onChange={item.onChange}
-                className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
-              >
-                {item.options.map((option, i) => (
-                  <option key={i} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
+              item.value === owner ? (
+                <select
+                  onChange={item.onChange}
+                  className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
+                >
+                  {ownersData.map((option, i) => (
+                    <option key={i} value={option._id}>
+                      {option.name}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <select
+                  onChange={item.onChange}
+                  className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
+                >
+                  {item.options.map((option, i) => (
+                    <option key={i} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              )
             ) : (
               <input
                 type={item.type}
