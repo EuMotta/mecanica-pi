@@ -47,8 +47,7 @@ const CarsForm = () => {
   const [licensingLicenseNumber, setLicensingLicenseNumber] = useState('');
   const [licensingState, setLicensingState] = useState('');
   const [performanceMaxSpeed, setPerformanceMaxSpeed] = useState('');
-  const [performanceFuelEfficiency, setPerformanceFuelEfficiency] =
-    useState('');
+  const [performanceFuelEfficiency, setPerformanceFuelEfficiency] = useState('');
   const [ownersData, setOwnerData] = useState([]);
 
   useEffect(() => {
@@ -157,7 +156,7 @@ const CarsForm = () => {
     {
       name: 'ID do dono:',
       type: 'select',
-      value: owner,
+      value: 'owner',
       onChange: (e) => setOwner(e.target.value),
       options: [],
     },
@@ -459,11 +458,13 @@ const CarsForm = () => {
           <label key={index}>
             <div className="">{item.name}</div>
             {item.type === 'select' ? (
-              item.value === owner ? (
+              item.value === 'owner' ? (
                 <select
                   onChange={item.onChange}
                   className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
+                  required
                 >
+                  <option value=""> </option>
                   {ownersData.map((option, i) => (
                     <option key={i} value={option._id}>
                       {option.name}
