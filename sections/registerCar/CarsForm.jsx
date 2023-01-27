@@ -163,13 +163,11 @@ const CarsForm = () => {
     {
       name: 'Nome do proprietario do carro:',
       type: 'text',
-      value: model,
       onChange: (e) => setOwnername(e.target.value),
     },
     {
       name: 'Fabricante:',
       type: 'select',
-      value: manufacturer,
       onChange: (e) => setManufacturer(e.target.value),
       options: [
         { value: '', label: 'Selecione a Fabricante' },
@@ -201,13 +199,11 @@ const CarsForm = () => {
     {
       name: 'Modelo:',
       type: 'text',
-      value: model,
       onChange: (e) => setModel(e.target.value),
     },
     {
       name: 'Ano:',
       type: 'text',
-      value: year,
       onChange: (e) => setYear(e.target.value),
       maxLength: '10',
       title: 'Data inválida, insira no formato DD/MM/AAAA',
@@ -216,230 +212,192 @@ const CarsForm = () => {
     {
       name: 'Renavam:',
       type: 'text',
-      value: registration,
       onChange: (e) => setRegistration(e.target.value),
       maxLength: '11',
     },
     {
       name: 'Odometro:',
       type: 'text',
-      value: odometer,
       onChange: (e) => setOdometer(e.target.value),
     },
     {
       name: 'Transmissão:',
       type: 'text',
-      value: transmission,
       onChange: (e) => setTransmission(e.target.value),
     },
     {
       name: 'Combustível:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setFuel(e.target.value),
     },
     {
       name: 'Modelo do Farol:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setFarolModel(e.target.value),
     },
     {
       name: 'Data de compra do farol:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setFarolBuyDate(e.target.value),
     },
     {
       name: 'Local de compra do farol:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setFarolLocation(e.target.value),
     },
     {
       name: 'Modelo da roda:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setTiresModel(e.target.value),
     },
     {
       name: 'Data de compra da roda:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setTiresBuyDate(e.target.value),
     },
     {
       name: 'Tamanho da roda frontal:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setTiresFrontSize(e.target.value),
     },
     {
       name: 'Tamanho da roda traseira:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setTiresRearSize(e.target.value),
     },
     {
       name: 'Local de compra das rodas:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setTiresLocation(e.target.value),
     },
     {
       name: 'Modelo do freio:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setBrakesModel(e.target.value),
     },
     {
       name: 'Data de compra do freio:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setBrakesBuyDate(e.target.value),
     },
     {
       name: 'Local de compra do freio:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setBrakesLocation(e.target.value),
     },
     {
       name: 'Modelo da bateria:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setBatteryModel(e.target.value),
     },
     {
       name: 'Data de compra da bateria:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setBatteryBuyDate(e.target.value),
     },
     {
       name: 'Local de compra da bateria:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setBatteryLocation(e.target.value),
     },
     {
       name: 'Modelo do óleo:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setOilModel(e.target.value),
     },
     {
       name: 'Data de compra do óleo:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setOilBuyDate(e.target.value),
     },
     {
       name: 'Local de compra do óleo:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setOilLocation(e.target.value),
     },
     {
       name: 'Manutenção 1 descrição:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setMaintenance1Description(e.target.value),
     },
     {
       name: 'Manutenção 1 data:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setMaintenance1Date(e.target.value),
     },
     {
       name: 'Manutenção 1 local:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setMaintenance1Location(e.target.value),
     },
     {
       name: 'Manutenção 2 descrição:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setMaintenance2Description(e.target.value),
     },
     {
       name: 'Manutenção 2 data:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setmaintenance2Date(e.target.value),
     },
     {
       name: 'Manutenção 2 local:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setMaintenance2Location(e.target.value),
     },
     {
       name: 'Empresa do seguro:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setInsuranceCompany(e.target.value),
     },
     {
       name: 'Codigo do seguro:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setInsurancePolicyNumber(e.target.value),
     },
     {
       name: 'Data de validade:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setInsuranceExpirationDate(e.target.value),
     },
     {
       name: 'Fornecedor da Garantia:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setWarrantyProvider(e.target.value),
     },
     {
       name: 'Termos da Garantia:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setWarrantyTerms(e.target.value),
     },
     {
       name: 'Data de expiração da Garantia:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setWarrantyExpirationDate(e.target.value),
     },
     {
       name: 'Numero da Licensa:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setLicensingLicenseNumber(e.target.value),
     },
     {
       name: 'Data de expiração da Licensa:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setLicenseExpirationDate(e.target.value),
     },
     {
       name: 'Estado da Licensa:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setLicensingState(e.target.value),
     },
     {
       name: 'Velocidade máxima:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setPerformanceMaxSpeed(e.target.value),
     },
     {
       name: 'Eficiencia do combustivel:',
       type: 'text',
-      value: fuel,
       onChange: (e) => setPerformanceFuelEfficiency(e.target.value),
     },
   ];
@@ -503,7 +461,7 @@ const CarsForm = () => {
           <div className="col-span-3 text-center p-5">
             <h4>Principais</h4>
           </div>
-          {formItems.slice(5, 13).map((item, index) => (
+          {formItems.slice(5, 9).map((item, index) => (
             <label key={index}>
               <div className="">{item.name}</div>
               {item.type === 'select' ? (
@@ -538,7 +496,7 @@ const CarsForm = () => {
           <div className="col-span-3 text-center p-5">
             <h4>Manutenção 1</h4>
           </div>
-          {formItems.slice(30, 33).map((item, index) => (
+          {formItems.slice(26, 29).map((item, index) => (
             <label key={index}>
               <div className="">{item.name}</div>
               {item.type === 'select' ? (
@@ -566,7 +524,7 @@ const CarsForm = () => {
           <div className="col-span-3 text-center p-5">
             <h4>Manutenção 2</h4>
           </div>
-          {formItems.slice(33, 36).map((item, index) => (
+          {formItems.slice(29, 32).map((item, index) => (
             <label key={index}>
               <div className="">{item.name}</div>
               {item.type === 'select' ? (
@@ -596,7 +554,7 @@ const CarsForm = () => {
           <div className="col-span-3 text-center p-5">
             <h4>Seguro</h4>
           </div>
-          {formItems.slice(36, 39).map((item, index) => (
+          {formItems.slice(32, 35).map((item, index) => (
             <label key={index}>
               <div className="">{item.name}</div>
               {item.type === 'select' ? (
@@ -624,7 +582,7 @@ const CarsForm = () => {
           <div className="col-span-3 text-center p-5">
             <h4>Garantia</h4>
           </div>
-          {formItems.slice(39, 42).map((item, index) => (
+          {formItems.slice(35, 38).map((item, index) => (
             <label key={index}>
               <div className="">{item.name}</div>
               {item.type === 'select' ? (
@@ -654,7 +612,7 @@ const CarsForm = () => {
           <div className="col-span-3 text-center p-5">
             <h4>Licensa</h4>
           </div>
-          {formItems.slice(42, 45).map((item, index) => (
+          {formItems.slice(38, 41).map((item, index) => (
             <label key={index}>
               <div className="">{item.name}</div>
               {item.type === 'select' ? (
@@ -682,7 +640,7 @@ const CarsForm = () => {
           <div className="col-span-3 text-center p-5">
             <h4>Eficiencia</h4>
           </div>
-          {formItems.slice(45, 47).map((item, index) => (
+          {formItems.slice(41, 43).map((item, index) => (
             <label key={index}>
               <div className="">{item.name}</div>
               {item.type === 'select' ? (
@@ -717,7 +675,7 @@ const CarsForm = () => {
           <div className="col-span-3 text-center p-5">
             <h4>Farol</h4>
           </div>
-          {formItems.slice(13, 16).map((item, index) => (
+          {formItems.slice(9, 12).map((item, index) => (
             <label key={index}>
               <div className="">{item.name}</div>
               <input
@@ -732,7 +690,7 @@ const CarsForm = () => {
           <div className="col-span-3 text-center p-5">
             <h4>Rodas</h4>
           </div>
-          {formItems.slice(16, 21).map((item, index) => (
+          {formItems.slice(12, 17).map((item, index) => (
             <label key={index}>
               <div className="">{item.name}</div>
               <input
@@ -749,7 +707,7 @@ const CarsForm = () => {
           <div className="col-span-3 text-center p-5">
             <h4>Freio</h4>
           </div>
-          {formItems.slice(21, 24).map((item, index) => (
+          {formItems.slice(17, 20).map((item, index) => (
             <label key={index}>
               <div className="">{item.name}</div>
               <input
@@ -764,7 +722,7 @@ const CarsForm = () => {
           <div className="col-span-3 text-center p-5">
             <h4>Bateria</h4>
           </div>
-          {formItems.slice(24, 27).map((item, index) => (
+          {formItems.slice(20, 23).map((item, index) => (
             <label key={index}>
               <div className="">{item.name}</div>
               <input
@@ -781,7 +739,7 @@ const CarsForm = () => {
           <div className="col-span-3 text-center p-5">
             <h4>Oleo</h4>
           </div>
-          {formItems.slice(27, 30).map((item, index) => (
+          {formItems.slice(23, 26).map((item, index) => (
             <label key={index}>
               <div className="">{item.name}</div>
               <input
