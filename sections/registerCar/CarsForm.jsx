@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md';
 import styles from '../../styles';
 
 const CarsForm = () => {
@@ -47,8 +48,13 @@ const CarsForm = () => {
   const [licensingLicenseNumber, setLicensingLicenseNumber] = useState('');
   const [licensingState, setLicensingState] = useState('');
   const [performanceMaxSpeed, setPerformanceMaxSpeed] = useState('');
-  const [performanceFuelEfficiency, setPerformanceFuelEfficiency] = useState('');
+  const [performanceFuelEfficiency, setPerformanceFuelEfficiency] =
+    useState('');
   const [ownersData, setOwnerData] = useState([]);
+  const [showM1, setShowM1] = useState(false);
+  const [showM2, setShowM2] = useState(false);
+  const [showSecure, setShowSecure] = useState(false);
+  const [showWarranty, setShowWarranty] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -493,96 +499,175 @@ const CarsForm = () => {
           <h2>Informações complementares</h2>
         </div>
         <div className="border bg-slate-300 rounded-lg shadow shadow-slate-600 p-2">
-          <div className="col-span-3 text-center p-5">
+          <div className="col-span-3 flex justify-center items-center gap-3 text-center p-5">
             <h4>Manutenção 1</h4>
+            <div className="relative ">
+              <input
+                type="checkbox"
+                className="absolute opacity-0"
+                checked={showM1}
+                onChange={() => setShowM1(!showM1)}
+                id="Manutenção1"
+              />
+              <label
+                htmlFor="Manutenção1"
+                className="relative text-center text-3xl"
+              >
+                {showM1 ? (
+                  <MdCheckBox className=" text-green-600 text-2xl" />
+                ) : (
+                  <MdCheckBoxOutlineBlank className="text-2xl" />
+                )}
+              </label>
+            </div>
           </div>
-          {formItems.slice(26, 29).map((item, index) => (
-            <label key={index}>
-              <div className="">{item.name}</div>
-              {item.type === 'select' ? (
-                <select
-                  onChange={item.onChange}
-                  className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
-                >
-                  {item.options.map((option, i) => (
-                    <option key={i} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              ) : (
-                <input
-                  type={item.type}
-                  onChange={item.onChange}
-                  maxLength={item.maxLength}
-                  title={item.title}
-                  placeholder={item.placeholder}
-                />
-              )}
-            </label>
-          ))}
-          <div className="col-span-3 text-center p-5">
+          {showM1 &&
+            formItems.slice(26, 29).map((item, index) => (
+              <label key={index}>
+                <div className="">{item.name}</div>
+                {item.type === 'select' ? (
+                  <select
+                    onChange={item.onChange}
+                    className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
+                  >
+                    {item.options.map((option, i) => (
+                      <option key={i} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type={item.type}
+                    onChange={item.onChange}
+                    maxLength={item.maxLength}
+                    title={item.title}
+                    placeholder={item.placeholder}
+                  />
+                )}
+              </label>
+            ))}
+          <div className="col-span-3 flex justify-center items-center gap-3 text-center p-5">
             <h4>Manutenção 2</h4>
+            <div className="relative ">
+              <input
+                type="checkbox"
+                className="absolute opacity-0"
+                checked={showM2}
+                onChange={() => setShowM2(!showM2)}
+                id="Manutenção2"
+              />
+              <label
+                htmlFor="Manutenção2"
+                className="relative text-center text-3xl"
+              >
+                {showM2 ? (
+                  <MdCheckBox className=" text-green-600 text-2xl" />
+                ) : (
+                  <MdCheckBoxOutlineBlank className="text-2xl" />
+                )}
+              </label>
+            </div>
           </div>
-          {formItems.slice(29, 32).map((item, index) => (
-            <label key={index}>
-              <div className="">{item.name}</div>
-              {item.type === 'select' ? (
-                <select
-                  onChange={item.onChange}
-                  className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
-                >
-                  {item.options.map((option, i) => (
-                    <option key={i} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              ) : (
-                <input
-                  type={item.type}
-                  onChange={item.onChange}
-                  maxLength={item.maxLength}
-                  title={item.title}
-                  placeholder={item.placeholder}
-                />
-              )}
-            </label>
-          ))}
+          {showM2 &&
+            formItems.slice(29, 32).map((item, index) => (
+              <label key={index}>
+                <div className="">{item.name}</div>
+                {item.type === 'select' ? (
+                  <select
+                    onChange={item.onChange}
+                    className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
+                  >
+                    {item.options.map((option, i) => (
+                      <option key={i} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type={item.type}
+                    onChange={item.onChange}
+                    maxLength={item.maxLength}
+                    title={item.title}
+                    placeholder={item.placeholder}
+                  />
+                )}
+              </label>
+            ))}
         </div>
         <div className="border bg-slate-300 rounded-lg shadow shadow-slate-600 p-2">
-          <div className="col-span-3 text-center p-5">
+          <div className="col-span-3 flex justify-center items-center gap-3 text-center p-5">
             <h4>Seguro</h4>
+            <div className="relative ">
+              <input
+                type="checkbox"
+                className="absolute opacity-0"
+                checked={showSecure}
+                onChange={() => setShowSecure(!showSecure)}
+                id="showSecure"
+              />
+              <label
+                htmlFor="showSecure"
+                className="relative text-center text-3xl"
+              >
+                {showSecure ? (
+                  <MdCheckBox className=" text-green-600 text-2xl" />
+                ) : (
+                  <MdCheckBoxOutlineBlank className="text-2xl" />
+                )}
+              </label>
+            </div>
           </div>
-          {formItems.slice(32, 35).map((item, index) => (
-            <label key={index}>
-              <div className="">{item.name}</div>
-              {item.type === 'select' ? (
-                <select
-                  onChange={item.onChange}
-                  className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
-                >
-                  {item.options.map((option, i) => (
-                    <option key={i} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              ) : (
-                <input
-                  type={item.type}
-                  onChange={item.onChange}
-                  maxLength={item.maxLength}
-                  title={item.title}
-                  placeholder={item.placeholder}
-                />
-              )}
-            </label>
-          ))}
-          <div className="col-span-3 text-center p-5">
+          {showSecure &&
+            formItems.slice(32, 35).map((item, index) => (
+              <label key={index}>
+                <div className="">{item.name}</div>
+                {item.type === 'select' ? (
+                  <select
+                    onChange={item.onChange}
+                    className="shadow-sm bg-aliceblue cursor-pointer border-2 border-slate-500 rounded"
+                  >
+                    {item.options.map((option, i) => (
+                      <option key={i} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type={item.type}
+                    onChange={item.onChange}
+                    maxLength={item.maxLength}
+                    title={item.title}
+                    placeholder={item.placeholder}
+                  />
+                )}
+              </label>
+            ))}
+          <div className="col-span-3 flex justify-center items-center gap-3 text-center p-5">
             <h4>Garantia</h4>
+            <div className="relative ">
+              <input
+                type="checkbox"
+                className="absolute opacity-0"
+                checked={showWarranty}
+                onChange={() => setShowWarranty(!showWarranty)}
+                id="showWarranty"
+              />
+              <label
+                htmlFor="showWarranty"
+                className="relative text-center text-3xl"
+              >
+                {showWarranty ? (
+                  <MdCheckBox className=" text-green-600 text-2xl" />
+                ) : (
+                  <MdCheckBoxOutlineBlank className="text-2xl" />
+                )}
+              </label>
+            </div>
           </div>
-          {formItems.slice(35, 38).map((item, index) => (
+          {showWarranty && formItems.slice(35, 38).map((item, index) => (
             <label key={index}>
               <div className="">{item.name}</div>
               {item.type === 'select' ? (
