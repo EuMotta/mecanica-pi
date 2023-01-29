@@ -1,3 +1,4 @@
-import Hero from './CarsForm';
+import CarsForm from './CarsForm';
+import OwnersForm from './registerOwner/OwnersForm';
 
-export default Hero;
+export { CarsForm, OwnersForm };

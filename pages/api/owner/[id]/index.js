@@ -17,9 +17,9 @@ const handler = async (req, res) => {
     cep: req.body.cep,
     extraPhone: req.body.extraPhone,
   });
-  const car = await newOwner.save();
+  const owner = await newOwner.save();
   await db.disconnect();
-  res.send({ message: 'owner added successfully!', car });
+  res.send({ message: 'owner added successfully!', owner });
 };
 
 export default handler;
