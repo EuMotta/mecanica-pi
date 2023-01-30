@@ -100,3 +100,18 @@ export const carsList = [
     setValue: 'setOilLocation',
   },
 ];
+
+export const navLinks = [
+  {
+    name: 'Registrar carro',
+    href: '/registerCar',
+  },
+  {
+    name: 'Registrar Dono',
+    href: '/registerOwner',
+  },
+  {
+    name: 'Exibir Carro',
+    href: '/showCars',
+  },
+];

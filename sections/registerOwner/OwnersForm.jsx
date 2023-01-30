@@ -76,12 +76,6 @@ const OwnersForm = () => {
       placeholder: 'Digite seu sobrenome',
     },
     {
-      name: 'Endereço:',
-      type: 'text',
-      onChange: (e) => setOwnerAddress(e.target.value),
-      placeholder: 'Digite seu endereço',
-    },
-    {
       name: 'Email:',
       type: 'text',
       onChange: (e) => setOwnerEmail(e.target.value),
@@ -164,6 +158,12 @@ const OwnersForm = () => {
       },
     },
     {
+      name: 'Endereço:',
+      type: 'text',
+      onChange: (e) => setOwnerAddress(e.target.value),
+      placeholder: 'Digite seu endereço',
+    },
+    {
       name: 'Cidade:',
       type: 'text',
       onChange: (e) => setOwnerCity(e.target.value),
@@ -195,11 +195,11 @@ const OwnersForm = () => {
           {ownerid._id}
         </div>
       ))}
-      <div className="glassmorphism grid  grid-cols-3 p-5 gap-10">
+      <div className="glassmorphism  p-5 gap-10">
         <div className="col-span-3 text-center p-5">
           <h2>Informações complementares</h2>
         </div>
-        <div className="border bg-slate-300 rounded-lg shadow shadow-slate-600 p-2">
+        <div className="border bg-slate-300 grid  grid-cols-3 gap-5 rounded-lg shadow shadow-slate-600 p-2">
           <div className="col-span-3 flex justify-center items-center gap-3 text-center p-5">
             <h4>Manutenção 1</h4>
           </div>

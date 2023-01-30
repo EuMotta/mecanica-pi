@@ -625,8 +625,7 @@ const CarsForm = () => {
               </label>
             </div>
           </div>
-          {showSecure &&
-            formItems.slice(32, 35).map((item, index) => (
+          {showSecure && formItems.slice(32, 35).map((item, index) => (
               <label key={index}>
                 <div className="">{item.name}</div>
                 {item.type === 'select' ? (
