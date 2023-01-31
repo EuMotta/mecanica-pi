@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import styles from '../../styles';
 import car1 from '../../public/car1.webp';
 
@@ -18,18 +19,33 @@ const ShowCars = () => {
   return (
     <div className={styles.xPaddings}>
       <div className="grid grid-cols-4">
-        {carsData.map((car) => (
-          <div className="glassmorphism">
+        {carsData.map((car, index) => (
+          <div key={index} className="glassmorphism">
             <div className="text-center">
               <div className="font-bold">{car.owner}</div>
             </div>
-            <Image src={car1} width={300} height={300} unoptimized />
-            <div className="text-center">
+            <Image src={car1} width={300} height={300} />
+            <div className="text-center font-bold bg-gray-50 shadow-sm shadow-slate-300">
               {car.model}
             </div>
-            <div className="">
-              <span className="font-semibold">Dono:</span> {car.Ownername}
+            <div className="p-2">
+              <div>
+                <span className="font-semibold">Dono:</span> {car.Ownername}
+              </div>
+              <div>
+                <span className="font-semibold">Fabricante:</span>{' '}
+                {car.manufacturer}
+              </div>
+              <div>
+                <span className="font-semibold">Ano:</span> {car.year}
+              </div>
+              <div>
+                <span className="font-semibold">Combustivel:</span> {car.fuel}
+              </div>
             </div>
+            <Link href="/" className="bg-gray-300 hover:bg-gray-500 hover:text-white flex justify-center">
+              Ver mais
+            </Link>
           </div>
         ))}
       </div>
