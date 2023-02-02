@@ -8,6 +8,7 @@ const handler = async (req, res) => {
     Ownername: req.body.car.Ownername,
     manufacturer: req.body.car.manufacturer,
     model: req.body.car.model,
+    image: req.body.car.image,
     year: req.body.car.year,
     registration: req.body.car.registration,
     odometer: req.body.car.odometer,

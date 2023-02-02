@@ -10,6 +10,7 @@ const CarsForm = () => {
   const [Ownername, setOwnername] = useState('');
   const [manufacturer, setManufacturer] = useState('');
   const [model, setModel] = useState('');
+  const [image, setImage] = useState('');
   const [year, setYear] = useState('');
   const [registration, setRegistration] = useState('');
   const [odometer, setOdometer] = useState('');
@@ -79,6 +80,13 @@ const CarsForm = () => {
     fetchData();
   }, []);
 
+  const handleImageChange = (e) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImage(reader.result);
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch(`/api/car/${e}`, {
@@ -92,6 +100,7 @@ const CarsForm = () => {
           Ownername,
           manufacturer,
           model,
+          image,
           year,
           registration,
           odometer,
@@ -421,6 +430,12 @@ const CarsForm = () => {
         </div>
       ))}
       <div className="glassmorphism p-4 grid grid-cols-3 gap-x-10">
+        <input
+          type="file"
+          accept="image/*"
+          className="p-2"
+          onChange={handleImageChange}
+        />
         <div className="col-span-3 text-center p-5">
           <h2>Informações essenciais</h2>
         </div>
@@ -625,7 +640,8 @@ const CarsForm = () => {
               </label>
             </div>
           </div>
-          {showSecure && formItems.slice(32, 35).map((item, index) => (
+          {showSecure &&
+            formItems.slice(32, 35).map((item, index) => (
               <label key={index}>
                 <div className="">{item.name}</div>
                 {item.type === 'select' ? (
@@ -949,18 +965,19 @@ const CarsForm = () => {
               </label>
             </div>
           </div>
-          {showOil && formItems.slice(23, 26).map((item, index) => (
-            <label key={index}>
-              <div className="">{item.name}</div>
-              <input
-                type={item.type}
-                onChange={item.onChange}
-                maxLength={item.maxLength}
-                title={item.title}
-                placeholder={item.placeholder}
-              />
-            </label>
-          ))}
+          {showOil &&
+            formItems.slice(23, 26).map((item, index) => (
+              <label key={index}>
+                <div className="">{item.name}</div>
+                <input
+                  type={item.type}
+                  onChange={item.onChange}
+                  maxLength={item.maxLength}
+                  title={item.title}
+                  placeholder={item.placeholder}
+                />
+              </label>
+            ))}
         </div>
       </div>
       <button type="submit">Submit</button>
