@@ -3,9 +3,9 @@
 import { SessionProvider } from 'next-auth/react';
 import Navbar from '../components/Navbar';
 
-const RootLayout = ({ children }) => (
+const RootLayout = ({ children, title }) => (
   <html lang="pt">
-    <head />
+    <title>{title ? `${title} - Início` : 'Início'}</title>
     <SessionProvider>
       <body><Navbar /> {children}</body>
     </SessionProvider>
