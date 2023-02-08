@@ -1,6 +1,5 @@
-const Head = ({ title }) => (
+const Head = () => (
   <>
-    <title>{title ? `${title} - Início` : 'Início'}</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta
       name="mecanica"
